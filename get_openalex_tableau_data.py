@@ -335,8 +335,8 @@ def data_for_continents_chord_diagram_1980():
     flows_between_continents.to_excel(f"{path}/chord_diagram_flows_between_continents_1980.xlsx")
 
 def get_papers_camps_ww1():
-    # ALLIES: US, UK, IRELAND, FRANCE, CANADA; JAPAN, ITALY, BELGIUM, AUSTRALIA, ROMANIA, POLAND, BRAZIL, SOUTH AFRICA, GREECE, NEW ZEALAND, PORTUGAL, SERBIA RUSSIA? , "RU"
-    ALLIES = ["US","GB","FR","IE","CA", "JP", "IT", "BE", "AU", "RO", "PL", "BR", "ZA", "GR", "NZ", "PT","RS"]
+    # ALLIES: US, UK, IRELAND, FRANCE, CANADA; JAPAN, ITALY, BELGIUM, AUSTRALIA, ROMANIA, POLAND, BRAZIL, SOUTH AFRICA, GREECE, NEW ZEALAND, PORTUGAL, SERBIA, RUSSIA
+    ALLIES = ["US","GB","FR","IE","CA", "JP", "IT", "BE", "AU", "RO", "PL", "BR", "ZA", "GR", "NZ", "PT","RS", "RU"]
     # CENTRALS: GERMANY, AUSTRIA, HUNGARY, BULGARIA, OTTOMAN Empire
     CENTRALS = ["DE", "AT", "HU", "BG", "TR"]
     # NEUTRALS: Swiss, NL, Sweden, Denmark, Norway, Czechoslovakia, Finland, Spain, Monaco and everyone else
@@ -471,7 +471,7 @@ def get_papers_camps_ww1():
 
 def get_papers_camps_ww2():
     # ALLIES: US, UK, SOVIET UNION, POLAND, CZ, NORWAY, NL, BE, LUXEMBOURG, FRANCE, GREECE, CANADA, CHINA, AUSTRALIA, NEW ZEALAND, SOUTH AFRICA, BRAZIL, MEXICO
-    ALLIES = ["US","GB", "PL", "CZ", "SK", "NO", "NL", "BE", "LU", "FR", "GR", "AU", "NZ", "CA", "ZA", "BR", "MX"]
+    ALLIES = ["US","GB", "PL", "CZ", "SK", "NO", "NL", "BE", "LU", "FR", "GR", "AU", "NZ", "CA", "ZA", "BR", "MX", "RU"]
     # AXIS: GERMANY, AUSTRIA, ITALY, HUNGARY, ROMANIA, BULGARIA, FINLAND, JAPAN
     AXIS = ["DE", "AT", "IT", "HU", "RO", "BG", "FI", "JP"]
     total_papers_from_countries = pd.read_excel(f"{path}/total_papers_removed_countries.xlsx", index_col=0)
@@ -619,9 +619,7 @@ def get_papers_camps_ww2():
 
 
 def get_papers_ukr_war():
-    # ALLIES: US, UK, SOVIET UNION, POLAND, CZ, NORWAY, NL, BE, LUXEMBOURG, FRANCE, GREECE, CANADA, CHINA, AUSTRALIA, NEW ZEALAND, SOUTH AFRICA, BRAZIL, MEXICO
     Ukraine = ["UA"]
-    # AXIS: GERMANY, AUSTRIA, ITALY, HUNGARY, ROMANIA, BULGARIA, FINLAND, JAPAN
     Russland = ["RU"]
     total_papers_from_countries = pd.read_excel(f"{path}/total_papers_removed_countries.xlsx", index_col=0)
 
@@ -692,7 +690,7 @@ def get_papers_ukr_war():
                         print(filtered_works_url)
                         break        
             year += 1
-    # Cooperational papers ww1 allies centrals
+    # Cooperational papers ukr ru
     allied_countries_str = ""
     centrals_countries_str = ""
     for allied_country in Ukraine:
